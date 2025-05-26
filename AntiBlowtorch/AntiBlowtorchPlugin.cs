@@ -187,6 +187,12 @@ public class AntiBlowtorchPlugin : RocketPlugin<AntiBlowtorchConfiguration>
                 return;
             }
             StructureData structureData = drop.GetServersideData();
+
+            if (instigatorSteamId == default)
+            {
+                return;
+            }
+
             if (instigatorSteamId.m_SteamID == structureData.owner)
             {
                 return;
@@ -212,6 +218,11 @@ public class AntiBlowtorchPlugin : RocketPlugin<AntiBlowtorchConfiguration>
             }
 
             BarricadeData barricadeData = drop.GetServersideData();
+            if (instigatorSteamID == default)
+            {
+                return;
+            }
+
             if (instigatorSteamID.m_SteamID == barricadeData.owner)
             {
                 return;
